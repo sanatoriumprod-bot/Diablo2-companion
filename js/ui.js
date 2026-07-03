@@ -38,7 +38,7 @@
   }
 
   function initCardSelection() {
-    const actionButtons = Array.from(document.querySelectorAll(".codex-card .text-button"));
+    const actionButtons = Array.from(document.querySelectorAll(".codex-card footer .text-button"));
     const detailBody = document.getElementById("detailBody");
     const clearDetail = document.getElementById("clearDetail");
 

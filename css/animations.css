@@ -1,9 +1,8 @@
 .nav-item,
 .chip,
 .text-button,
-.icon-button,
-.codex-card {
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+.icon-button {
+  transition: transform 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .nav-item:hover,
@@ -19,6 +18,10 @@
   transform: translateY(-4px);
   border-color: rgba(213, 178, 106, 0.8);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(213, 178, 106, 0.2);
+}
+
+.codex-card {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
 }
 
 .codex-card:focus-within {
