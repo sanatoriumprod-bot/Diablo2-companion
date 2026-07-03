@@ -38,14 +38,16 @@
   }
 
   function initCardSelection() {
-    const cards = Array.from(document.querySelectorAll(".codex-card"));
+    const actionButtons = Array.from(document.querySelectorAll(".codex-card .text-button"));
     const detailBody = document.getElementById("detailBody");
     const clearDetail = document.getElementById("clearDetail");
 
-    if (!cards.length || !detailBody || !clearDetail) return;
+    if (!actionButtons.length || !detailBody || !clearDetail) return;
 
-    cards.forEach(function (card) {
-      card.addEventListener("click", function () {
+    actionButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const card = button.closest(".codex-card");
+        if (!card) return;
         state.selectedCard = card.dataset.name || UNKNOWN_CARD_NAME;
         renderDetail(detailBody, state.selectedCard);
       });
