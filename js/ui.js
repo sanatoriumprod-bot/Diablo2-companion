@@ -9,21 +9,27 @@
 
     if (!name) {
       const emptyText = document.createElement("p");
-      emptyText.textContent = "Select a card to inspect future recipe details.";
+      emptyText.textContent = "Select a recipe card to inspect runes and forged attributes.";
       detailBody.appendChild(emptyText);
       return;
     }
 
-    const title = document.createElement("p");
-    const strong = document.createElement("strong");
-    strong.textContent = name;
-    title.appendChild(strong);
+    const title = document.createElement("h3");
+    title.textContent = name;
 
-    const description = document.createElement("p");
-    description.textContent = "Recipe data will appear here in a future iteration.";
+    const base = document.createElement("p");
+    base.textContent = "Base Type: Socketed Item";
+
+    const runes = document.createElement("p");
+    runes.textContent = "Runes: (placeholder) — integrated data arrives in next iteration.";
+
+    const flavor = document.createElement("p");
+    flavor.textContent = "Inspection feed displays handcrafted item properties and cube notes.";
 
     detailBody.appendChild(title);
-    detailBody.appendChild(description);
+    detailBody.appendChild(base);
+    detailBody.appendChild(runes);
+    detailBody.appendChild(flavor);
   }
 
   function initSidebarToggle() {
