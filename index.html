@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horadric Codex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/cards.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand__sigil">✦</span>
+        <div>
+          <h1>Horadric Codex</h1>
+          <p>D2R Companion</p>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Main navigation">
+        <button class="nav-item nav-item--active" type="button">Runewords</button>
+        <button class="nav-item" type="button">Recipes</button>
+        <button class="nav-item" type="button">Uniques</button>
+        <button class="nav-item" type="button">Sets</button>
+      </nav>
+
+      <section class="sidebar__section">
+        <h2>Quick Filters</h2>
+        <div class="chip-list">
+          <button class="chip" type="button">Ladder</button>
+          <button class="chip" type="button">Offline</button>
+          <button class="chip" type="button">Seasonal</button>
+        </div>
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <button class="icon-button" id="sidebarToggle" aria-label="Toggle sidebar" type="button">☰</button>
+        <label class="search" for="searchInput">
+          <span class="search__icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search runes, runewords, or item bases..." autocomplete="off" />
+        </label>
+      </header>
+
+      <section class="content-grid" id="cardGrid" aria-label="Recipe list">
+        <article class="codex-card" data-name="Ancient Oath">
+          <header>
+            <h3>Ancient Oath</h3>
+            <span class="badge">Runeword</span>
+          </header>
+          <p>UI placeholder card for future recipe data.</p>
+          <footer><button class="text-button" type="button">View Details</button></footer>
+        </article>
+
+        <article class="codex-card" data-name="Call to Arms">
+          <header>
+            <h3>Call to Arms</h3>
+            <span class="badge">Runeword</span>
+          </header>
+          <p>Premium-styled card with hover animation foundation.</p>
+          <footer><button class="text-button" type="button">View Details</button></footer>
+        </article>
+
+        <article class="codex-card" data-name="Spirit">
+          <header>
+            <h3>Spirit</h3>
+            <span class="badge">Runeword</span>
+          </header>
+          <p>Grid and interactions are ready for live data injection.</p>
+          <footer><button class="text-button" type="button">View Details</button></footer>
+        </article>
+      </section>
+    </main>
+
+    <aside class="detail-panel" id="detailPanel">
+      <header>
+        <h2>Details</h2>
+        <button class="icon-button" id="clearDetail" type="button" aria-label="Clear detail panel">✕</button>
+      </header>
+      <div class="detail-panel__body" id="detailBody">
+        <p>Select a card to inspect future recipe details.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="/js/ui.js" defer></script>
+  <script src="/js/search.js" defer></script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
