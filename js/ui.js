@@ -1,7 +1,30 @@
 (function () {
+  const UNKNOWN_CARD_NAME = "Unknown";
   const state = {
     selectedCard: null,
   };
+
+  function renderDetail(detailBody, name) {
+    detailBody.textContent = "";
+
+    if (!name) {
+      const emptyText = document.createElement("p");
+      emptyText.textContent = "Select a card to inspect future recipe details.";
+      detailBody.appendChild(emptyText);
+      return;
+    }
+
+    const title = document.createElement("p");
+    const strong = document.createElement("strong");
+    strong.textContent = name;
+    title.appendChild(strong);
+
+    const description = document.createElement("p");
+    description.textContent = "Recipe data will appear here in a future iteration.";
+
+    detailBody.appendChild(title);
+    detailBody.appendChild(description);
+  }
 
   function initSidebarToggle() {
     const sidebar = document.getElementById("sidebar");
@@ -23,14 +46,14 @@
 
     cards.forEach(function (card) {
       card.addEventListener("click", function () {
-        state.selectedCard = card.dataset.name || "Unknown";
-        detailBody.innerHTML = "<p><strong>" + state.selectedCard + "</strong></p><p>Recipe data will appear here in a future iteration.</p>";
+        state.selectedCard = card.dataset.name || UNKNOWN_CARD_NAME;
+        renderDetail(detailBody, state.selectedCard);
       });
     });
 
     clearDetail.addEventListener("click", function () {
       state.selectedCard = null;
-      detailBody.innerHTML = "<p>Select a card to inspect future recipe details.</p>";
+      renderDetail(detailBody, state.selectedCard);
     });
   }
 
